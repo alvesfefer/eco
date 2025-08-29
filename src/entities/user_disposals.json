@@ -1,0 +1,65 @@
+
+{
+  "name": "user_disposals",
+  "options": {
+    "validator": {
+      "$jsonSchema": {
+        "bsonType": "object",
+        "required": ["user_id", "item_name", "category", "disposal_date", "points_earned"],
+        "properties": {
+          "user_id": {
+            "bsonType": "string",
+            "description": "ID do usuário"
+          },
+          "item_name": {
+            "bsonType": "string",
+            "description": "Nome do item descartado"
+          },
+          "category": {
+            "bsonType": "string",
+            "description": "Categoria do item"
+          },
+          "disposal_date": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Data do descarte"
+          },
+          "points_earned": {
+            "bsonType": "int",
+            "minimum": 1,
+            "description": "Pontos ganhos pelo descarte"
+          },
+          "location": {
+            "bsonType": "string",
+            "description": "Local onde foi descartado"
+          },
+          "notes": {
+            "bsonType": "string",
+            "description": "Observações do usuário"
+          },
+          "verified": {
+            "bsonType": "bool",
+            "description": "Se o descarte foi verificado"
+          },
+          "creator": {
+            "bsonType": "string",
+            "description": "Criador do registro"
+          },
+          "createdAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Data de criação"
+          },
+          "updatedAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Data de atualização"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "validationLevel": "moderate",
+    "validationAction": "warn"
+  }
+}

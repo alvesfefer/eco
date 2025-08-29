@@ -1,0 +1,65 @@
+
+{
+  "name": "ai_conversations",
+  "options": {
+    "validator": {
+      "$jsonSchema": {
+        "bsonType": "object",
+        "required": ["user_id", "question", "answer", "category", "created_at"],
+        "properties": {
+          "user_id": {
+            "bsonType": "string",
+            "description": "ID do usuário que fez a pergunta"
+          },
+          "question": {
+            "bsonType": "string",
+            "description": "Pergunta feita pelo usuário"
+          },
+          "answer": {
+            "bsonType": "string",
+            "description": "Resposta da IA"
+          },
+          "category": {
+            "bsonType": "string",
+            "enum": ["descarte", "reciclagem", "impacto", "pontos_coleta", "geral"],
+            "description": "Categoria da pergunta"
+          },
+          "confidence": {
+            "bsonType": "number",
+            "minimum": 0,
+            "maximum": 1,
+            "description": "Confiança da resposta da IA"
+          },
+          "helpful": {
+            "bsonType": "bool",
+            "description": "Se o usuário achou a resposta útil"
+          },
+          "related_items": {
+            "bsonType": "array",
+            "items": {
+              "bsonType": "string"
+            },
+            "description": "Itens relacionados à pergunta"
+          },
+          "creator": {
+            "bsonType": "string",
+            "description": "Sistema que criou o registro"
+          },
+          "created_at": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Data e hora da conversa"
+          },
+          "updated_at": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Data e hora da última atualização"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "validationLevel": "moderate",
+    "validationAction": "warn"
+  }
+}

@@ -1,0 +1,82 @@
+
+{
+  "name": "waste_items",
+  "options": {
+    "validator": {
+      "$jsonSchema": {
+        "bsonType": "object",
+        "required": ["name", "category", "disposal_method", "environmental_impact", "correct_disposal", "collection_points"],
+        "properties": {
+          "name": {
+            "bsonType": "string",
+            "description": "Nome do item de descarte"
+          },
+          "category": {
+            "bsonType": "string",
+            "enum": ["eletrônicos", "pilhas_baterias", "lâmpadas", "óleo", "medicamentos", "plásticos", "vidros", "papel", "orgânicos", "químicos"]
+          },
+          "disposal_method": {
+            "bsonType": "string",
+            "description": "Método correto de descarte"
+          },
+          "environmental_impact": {
+            "bsonType": "string",
+            "description": "Impacto ambiental se descartado incorretamente"
+          },
+          "correct_disposal": {
+            "bsonType": "string",
+            "description": "O que acontece quando descartado corretamente"
+          },
+          "collection_points": {
+            "bsonType": "array",
+            "items": {
+              "bsonType": "string"
+            },
+            "description": "Tipos de pontos de coleta"
+          },
+          "image_url": {
+            "bsonType": "string",
+            "description": "URL da imagem do item"
+          },
+          "tips": {
+            "bsonType": "array",
+            "items": {
+              "bsonType": "string"
+            },
+            "description": "Dicas adicionais para o descarte"
+          },
+          "recyclable_materials": {
+            "bsonType": "array",
+            "items": {
+              "bsonType": "string"
+            },
+            "description": "Materiais que podem ser reciclados"
+          },
+          "danger_level": {
+            "bsonType": "int",
+            "minimum": 1,
+            "maximum": 5,
+            "description": "Nível de perigo (1-5)"
+          },
+          "creator": {
+            "bsonType": "string",
+            "description": "Criador do registro"
+          },
+          "createdAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Data de criação ISO 8601"
+          },
+          "updatedAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Data de atualização ISO 8601"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "validationLevel": "moderate",
+    "validationAction": "warn"
+  }
+}
