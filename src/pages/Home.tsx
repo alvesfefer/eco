@@ -270,7 +270,7 @@ const HomePage: React.FC = () => {
             {/* Logo */}
             <div className="flex flex-col items-center md:items-start">
               <img
-                src={"SodaBug.jpg"}
+                src={"eco/SodaBug.jpg"}
                 alt="Logo EcoFlow"
                 className="w-20 h-20 rounded-full shadow-lg border-2 border-white"
               />
